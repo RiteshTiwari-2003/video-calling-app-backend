@@ -5,6 +5,7 @@ const roomHandler = (socket: Socket) => {
         const roomid=UUIDv4();//this will be our unique room id in which multiple connection will exchange data 
         socket.join(roomid);// we will make the socket connection enter a new room 
         socket.emit("room-created",{roomid});// we will emit a event from server side that socket connection has been added to a room 
+        console.log("room created with id",roomid)
 
     };
     const joinRoom=()=>{
