@@ -13,14 +13,14 @@ const roomHandler = (socket: Socket) => {
         console.log("room created with id", roomId);
 
     };
-    const joinedRoom = (roomId: string) => {
-        console.log("New User has  joined room ", roomId);
+    const joinedRoom = (roomId: string,peerId: string) => {
+        console.log("New User has  joined room ", roomId,"with peerId as ",peerId);
     };
     // when to call above two function
     // we wil call the above two function when 
     // the client will emit events to create room and join room
     socket.on("create-room", createRoom);
-    socket.on("joined-room", (roomId: string) => joinedRoom(roomId));
+    socket.on("joined-room", (roomId: string,peerId: string) => joinedRoom(roomId,peerId));
 
 };
 export default roomHandler;
