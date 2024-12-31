@@ -15,7 +15,7 @@ const io = new Server(server, {
 });
 io.on("connection", (socket) => {
     console.log("new user connected");
-    roomHandler(socket);//pass the socket connection to the room handler for room creation and join 
+    roomHandler(socket); // pass the socket connection to the room handler for room creation and join
     socket.on("disconnect", () => {
         console.log("User Disconnected");
     });
